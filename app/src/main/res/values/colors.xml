@@ -6,5 +6,7 @@
     <color name="lbrown">#F0E2E7</color>
     <color name="dbrown">#3F84E5</color>
     <color name="tbarbg">#00AFB5</color>
+<color name="stbar">#14733D</color>
+    <color name="stbar2">#377771</color>
 
 </resources>

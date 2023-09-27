@@ -5,7 +5,9 @@ class ExerciseModel  (
     private var name:String,
     private var image:Int,
     private var isCompleted:Boolean,
-    private var isSelected:Boolean
+    private var isSelected:Boolean,
+    private var quote:String,
+    private var qname:String
 
 ){
 
@@ -39,6 +41,18 @@ class ExerciseModel  (
     }
     fun setIsselectedd(isSelected: Boolean){
         this.isSelected=isSelected
+    }
+    fun getquote():String{
+        return quote
+    }
+    fun setquote(quote: String){
+        this.quote=quote
+    }
+    fun getqname():String{
+        return qname
+    }
+    fun setqname(qname: String){
+        this.qname=qname
     }
 
 

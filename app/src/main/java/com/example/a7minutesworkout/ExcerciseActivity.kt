@@ -1,7 +1,6 @@
 package com.example.a7minutesworkout
 
-import android.app.Activity
-import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +12,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
-import com.example.a7minutesworkout.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
 import java.util.Locale
 
 class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -26,13 +23,15 @@ class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var tts:TextToSpeech?=null
     private var player:MediaPlayer?=null
     private var exerciseAdapter:ExerciseStaticAdaptor?=null
+    private var timerDuration:Long=1  //10
+    private var ExtimerDuration:Long=1 //30
 
 
     private var excerciseTimer:CountDownTimer?=null
     private var excerciseProcess=0
     private var excerciseList:ArrayList<ExerciseModel>?=null
     private var currentExercisePosition=-1
-    private var resultPosition=0
+   // private var resultPosition=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityExcerciseBinding.inflate(layoutInflater)
@@ -88,6 +87,8 @@ setupRestView()
             restTimer?.cancel()
             restProcess=0
         }
+        binding?.tvResultName?.text=excerciseList!![currentExercisePosition+1].getname()
+
         setRestProgressbar()
     }
     private fun setupExerciseView(){
@@ -106,14 +107,15 @@ setupRestView()
 
         binding?.ivImage?.setImageResource(excerciseList!![currentExercisePosition].getImage())
         binding?.tvExeciseName?.text=excerciseList!![currentExercisePosition].getname()
-        binding?.tvResultName?.text=excerciseList!![resultPosition].getname()
+      //  binding?.tvResultName?.text=excerciseList!![resultPosition].getname()
+
 
         setExcerciseProgressbar()
     }
     private fun setRestProgressbar(){
         binding?.progressBar?.progress=restProcess
 
-        restTimer= object: CountDownTimer(10000,1000){
+        restTimer= object: CountDownTimer( timerDuration*1000,1000){
             override fun onTick(p0: Long) {
                restProcess++
                 binding?.progressBar?.progress=10-restProcess
@@ -137,7 +139,7 @@ setupRestView()
                // val snackbar = rootView?.let { Snackbar.make(it, "Time complete!", Snackbar.LENGTH_LONG) }
                // snackbar?.show()
                 currentExercisePosition++
-                resultPosition++
+//                resultPosition++
                 excerciseList!![currentExercisePosition].setIsselectedd(true)
                 exerciseAdapter!!.notifyDataSetChanged()
                 setupExerciseView()
@@ -147,7 +149,7 @@ setupRestView()
     } private fun setExcerciseProgressbar(){
         binding?.progressBarExcercise?.progress=excerciseProcess
 
-        excerciseTimer= object: CountDownTimer(30000,1000){
+        excerciseTimer= object: CountDownTimer(ExtimerDuration*1000,1000){
             override fun onTick(p0: Long) {
                 excerciseProcess++
                 binding?.progressBarExcercise?.progress=30-excerciseProcess
@@ -171,18 +173,24 @@ setupRestView()
                // val snackbar = rootView?.let { Snackbar.make(it, "Take a break!!", Snackbar.LENGTH_LONG) }
                // snackbar?.show()
 
-                excerciseList!![currentExercisePosition].setIsselectedd(false)
-                excerciseList!![currentExercisePosition].setIsComplete(true)
-                exerciseAdapter!!.notifyDataSetChanged()
+
 
                 if(currentExercisePosition<excerciseList?.size!!-1){
+                    excerciseList!![currentExercisePosition].setIsselectedd(false)
+                    excerciseList!![currentExercisePosition].setIsComplete(true)
+                    exerciseAdapter!!.notifyDataSetChanged()
                     setupRestView()
                 }else{
-                    Toast.makeText(
-                        this@ExcerciseActivity,
-                        "congratulations!You have completed the 7 minutes workout",
-                        Toast.LENGTH_SHORT
-                    ).show()
+//                    Toast.makeText(
+//                        this@ExcerciseActivity,
+//                        "congratulations!You have completed the 7 minutes workout",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+                    finish()
+                    val intent= Intent(this@ExcerciseActivity,Finish::class.java)
+                    startActivity(intent)
+
+
                 }
             }
 

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Finish"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1587dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarfinal"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:theme="@style/toolbarTheme"
+            android:background="#27AC5F"
+            app:titleTextColor="@color/black"
+            />
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="296dp"
+            android:layout_marginTop="16dp"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/done"
+            app:lottie_autoPlay="true"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="1dp"
+                android:gravity="center"
+                android:text="HEY,Congratulations!"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You completed the workout "
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="195dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvQuote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_marginTop="1dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#808080"
+                android:textSize="20sp"
+
+
+                />
+
+            <TextView
+                android:id="@+id/tvQname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:gravity="right"
+                android:layout_margin="3dp"
+                android:text=""
+                android:textColor="#808080"
+                android:textSize="15sp"
+
+                 />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
