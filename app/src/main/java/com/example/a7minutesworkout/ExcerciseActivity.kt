@@ -1,5 +1,6 @@
 package com.example.a7minutesworkout
 
+import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
@@ -12,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
+import com.example.a7minutesworkout.databinding.DialogExitBinding
 import java.util.Locale
 
 class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -47,13 +49,34 @@ class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         tts= TextToSpeech(this,this)
 
         binding?.toolbar?.setNavigationOnClickListener {
-            onBackPressed()
+            cuatomDialogforbackbutton()
         }
 setupRestView()
         setupExerciseRecycleview()
 
 
     }
+
+    override fun onBackPressed() {
+        cuatomDialogforbackbutton()
+       // super.onBackPressed()
+    }
+     private fun cuatomDialogforbackbutton(){
+         val customdialog = Dialog(this)
+         val dialogBinding=DialogExitBinding.inflate(layoutInflater)
+         customdialog.setContentView(dialogBinding.root)
+         customdialog.setCanceledOnTouchOutside(false)
+         dialogBinding.blCustomYes.setOnClickListener{
+             this@ExcerciseActivity.finish()
+             customdialog.dismiss()
+
+         }
+         dialogBinding.blCustomNo.setOnClickListener{
+             customdialog.dismiss()
+
+         }
+         customdialog.show()
+     }
     private fun setupExerciseRecycleview() {
         binding?.rvExerciseStatus?.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)

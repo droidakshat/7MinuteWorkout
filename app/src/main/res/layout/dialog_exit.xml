@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:layout_margin="2dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:layout_margin="3dp"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are you sure?"
+            android:gravity="center"
+            android:layout_margin="6dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This will stop your workout.Are you sure you want to exit?"
+            android:textColor="@color/material_dynamic_neutral40"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:textSize="16dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/bl_customYes"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:backgroundTint="@color/stbar2"
+
+            android:scrollbarThumbHorizontal="@android:drawable/bottom_bar"
+            android:text="Yes" />
+
+        <Button
+            android:id="@+id/bl_customNo"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/stbar2"
+            android:text="No" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
