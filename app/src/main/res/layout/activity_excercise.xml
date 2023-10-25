@@ -57,18 +57,17 @@
     <LinearLayout
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:gravity="center"
         android:layout_gravity="center"
-        android:background="@drawable/item_circular_color_accent_background"
-        >
+        android:background="@drawable/item_circular_color_accent_background">
 
         <TextView
             android:id="@+id/tvtimer"
-            android:layout_width="289dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:text="10"
             android:textColor="@color/white"
-            android:layout_marginLeft="22dp"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -147,16 +146,15 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:background="@drawable/item_circular_color_accent_background">
-
             <TextView
                 android:id="@+id/tvtimerExcercise"
-                android:layout_width="289dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="30"
+                android:gravity="center"
                 android:textColor="@color/white"
-                android:layout_marginLeft="18dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
