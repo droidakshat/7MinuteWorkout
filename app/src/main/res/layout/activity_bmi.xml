@@ -91,7 +91,7 @@
         </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/resultbmi"
+        android:id="@+id/btnresultbmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llDisplayBmiresult"
@@ -99,6 +99,7 @@
         android:layout_marginTop="35dp"
         android:backgroundTint="@color/stbar"
         android:gravity="center"
+        app:cornerRadius="0dp"
         android:text="CALCULATE"
         android:textColor="@color/lbrown"
         android:textSize="18sp" />
