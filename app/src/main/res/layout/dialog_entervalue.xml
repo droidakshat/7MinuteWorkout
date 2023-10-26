@@ -5,7 +5,14 @@
     android:padding="5dp"
     android:layout_margin="2dp"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:layout_margin="3dp"
 
+        >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,31 +23,41 @@
             android:textStyle="normal"
             android:textSize="20dp"
             />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Please enter the value!"
+            android:text="Please enter value to ccalculate!"
             android:textColor="@color/material_dynamic_neutral40"
             android:gravity="center"
             android:textStyle="normal"
             android:textSize="16dp"
             />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        >
+
         <Button
-            android:id="@+id/bl_customOk"
+            android:id="@+id/bl_customOK"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="146dp"
 
             android:backgroundTint="@color/stbar2"
 
             android:scrollbarThumbHorizontal="@android:drawable/bottom_bar"
-            android:text="OK" />
+            android:text="Ok" />
+
+
+
     </LinearLayout>
 
 
 
 
-
+</LinearLayout>
 

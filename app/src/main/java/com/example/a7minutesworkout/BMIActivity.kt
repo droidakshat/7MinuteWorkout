@@ -46,7 +46,7 @@ class BMIActivity : AppCompatActivity() {
 //            customdialog.dismiss()
 //
 //        }
-                dialogBinding.blCustomOk.setOnClickListener{
+                dialogBinding.blCustomOK.setOnClickListener{
                     customdialog.dismiss()
 
                 }
